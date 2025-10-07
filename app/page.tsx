@@ -1,4 +1,6 @@
-import { Suspense } from "react"
+"use client"
+
+import { Suspense, useState, useEffect } from "react"
 import { WordExplorer } from "@/components/word-explorer"
 import { WordOfDay } from "@/components/word-of-day"
 import { Features } from "@/components/features"
@@ -9,6 +11,22 @@ import { SiLinkedin, SiGithub } from "react-icons/si"
 import { Globe } from "lucide-react"
 
 export default function Page() {
+  const [showBackToTop, setShowBackToTop] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show button when scrolled down more than 300px from top
+      setShowBackToTop(window.scrollY > 300)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <main className="min-h-dvh">
       <div className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur">
@@ -278,15 +296,17 @@ export default function Page() {
       </footer>
 
       {/* Back to Top Button */}
-      <a 
-        href="#search" 
-        className="fixed bottom-6 right-6 z-50 w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-        aria-label="Back to top"
-      >
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-        </svg>
-      </a>
+      {showBackToTop && (
+        <button 
+          onClick={scrollToTop}
+          className="fixed bottom-6 cursor-pointer right-6 z-50 w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+          aria-label="Back to top"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+          </svg>
+        </button>
+      )}
     </main>
   )
 }
