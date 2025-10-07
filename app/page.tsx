@@ -1,0 +1,255 @@
+import { Suspense } from "react"
+import { WordExplorer } from "@/components/word-explorer"
+import { WordOfDay } from "@/components/word-of-day"
+import { Features } from "@/components/features"
+import { About } from "@/components/about"
+import Link from "next/link"
+import { Navbar } from "@/components/navbar"
+
+export default function Page() {
+  return (
+    <main className="min-h-dvh">
+      <div className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur">
+        <div className="mx-auto max-w-6xl px-4">
+          <Navbar />
+        </div>
+      </div>
+
+      <header className="border-b relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 dark:from-slate-950 dark:via-blue-950/30 dark:to-indigo-950/50"></div>
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 25% 25%, #e2e8f0 1px, transparent 1px)', backgroundSize: '60px 60px'}}></div>
+        </div>
+        <div className="mx-auto max-w-6xl px-4 py-20 relative">
+          <div className="text-center animate-in fade-in slide-in-from-bottom-2 duration-1000">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/50 bg-background/80 backdrop-blur-sm mb-8 text-sm font-medium text-muted-foreground">
+              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+              AI-Powered Dictionary Experience
+            </div>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-foreground mb-6 leading-none tracking-tight">
+              Your Calm Study
+              <br />
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                Dictionary
+              </span>
+            </h1>
+            <p className="text-muted-foreground max-w-3xl mx-auto text-xl md:text-2xl leading-relaxed mb-8 font-light">
+              Discover words in a peaceful, distraction-free environment designed for 
+              <span className="text-foreground font-medium"> focused learning</span> and 
+              <span className="text-foreground font-medium"> deep understanding</span>.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+              <a
+                href="#search"
+                className="group inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-2xl font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
+              >
+                Start Exploring
+                <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
+              <a
+                href="#features"
+                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-border hover:border-primary/50 rounded-2xl font-medium text-lg transition-all duration-200 hover:bg-muted/50"
+              >
+                See Features
+              </a>
+            </div>
+            <div className="flex items-center justify-center gap-8 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <span>Etymology & Origins</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-900/30 dark:to-cyan-900/30 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM15.657 6.343a1 1 0 011.414 0A9.972 9.972 0 0119 12a9.972 9.972 0 01-1.929 5.657 1 1 0 11-1.414-1.414A7.971 7.971 0 0017 12c0-1.01-.188-1.974-.529-2.829a1 1 0 010-1.414l.186-.414z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <span>Audio Pronunciation</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900/30 dark:to-pink-900/30 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <span>Visual Context</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section id="search" className="relative overflow-hidden bg-gradient-to-br from-gray-50/50 via-white to-blue-50/30 dark:from-gray-950/50 dark:via-gray-900 dark:to-blue-950/30">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{backgroundImage: 'linear-gradient(45deg, #e2e8f0 25%, transparent 25%), linear-gradient(-45deg, #e2e8f0 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #e2e8f0 75%), linear-gradient(-45deg, transparent 75%, #e2e8f0 75%)', backgroundSize: '20px 20px', backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'}}></div>
+        </div>
+        <div className="mx-auto max-w-6xl px-4 py-20 relative">
+          <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-2">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/50 bg-background/80 backdrop-blur-sm mb-6 text-sm font-medium text-muted-foreground">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
+              </svg>
+              Interactive Word Search
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+              Word Explorer
+            </h2>
+            <p className="text-muted-foreground max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">
+              Search for any English word to discover its <span className="text-foreground font-semibold">meaning</span>, 
+              <span className="text-foreground font-semibold"> pronunciation</span>, 
+              <span className="text-foreground font-semibold"> etymology</span>, and 
+              <span className="text-foreground font-semibold"> visual context</span>
+            </p>
+          </div>
+          <div className="animate-in fade-in slide-in-from-bottom-2 delay-300">
+            <Suspense>
+              <WordExplorer />
+            </Suspense>
+          </div>
+        </div>
+      </section>
+
+      <section id="word-of-day" className="border-t bg-gradient-to-br from-purple-50/30 via-pink-50/20 to-rose-50/30 dark:from-purple-950/20 dark:via-pink-950/10 dark:to-rose-950/20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 80%, #e879f9 0.5px, transparent 0.5px), radial-gradient(circle at 80% 20%, #f472b6 0.5px, transparent 0.5px), radial-gradient(circle at 40% 40%, #c084fc 0.5px, transparent 0.5px)', backgroundSize: '50px 50px, 80px 80px, 60px 60px'}}></div>
+        </div>
+        <div className="mx-auto max-w-6xl px-4 py-20 relative">
+          <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-2">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-200/50 bg-purple-50/80 dark:border-purple-700/50 dark:bg-purple-950/50 backdrop-blur-sm mb-6 text-sm font-medium text-purple-700 dark:text-purple-300">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+              </svg>
+              Daily Vocabulary
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 bg-clip-text text-transparent">
+              Word of the Day
+            </h2>
+            <p className="text-muted-foreground max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">
+              Expand your vocabulary with our <span className="text-foreground font-semibold">carefully selected</span> daily word, 
+              complete with detailed explanations and <span className="text-foreground font-semibold">pronunciation guides</span>
+            </p>
+          </div>
+          <div className="animate-in fade-in slide-in-from-bottom-2 delay-500">
+            <WordOfDay />
+          </div>
+        </div>
+      </section>
+
+      <section id="features" className="border-t bg-gradient-to-br from-gray-50/50 via-white to-blue-50/30 dark:from-gray-950/50 dark:via-gray-900 dark:to-blue-950/30 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{backgroundImage: 'linear-gradient(45deg, #e2e8f0 25%, transparent 25%), linear-gradient(-45deg, #e2e8f0 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #e2e8f0 75%), linear-gradient(-45deg, transparent 75%, #e2e8f0 75%)', backgroundSize: '20px 20px', backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'}}></div>
+        </div>
+        <div className="mx-auto max-w-6xl px-4 py-20 relative">
+          <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-2">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/50 bg-background/80 backdrop-blur-sm mb-6 text-sm font-medium text-muted-foreground">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
+              </svg>
+              Advanced Capabilities
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+              Powerful Features
+            </h2>
+            <p className="text-muted-foreground max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">
+              Everything you need for <span className="text-foreground font-semibold">effective vocabulary building</span> and 
+              <span className="text-foreground font-semibold">comprehensive word exploration</span>
+            </p>
+          </div>
+          <div className="animate-in fade-in slide-in-from-bottom-2 delay-300">
+            <Features />
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="border-t bg-gradient-to-br from-gray-50/50 via-white to-blue-50/30 dark:from-gray-950/50 dark:via-gray-900 dark:to-blue-950/30 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{backgroundImage: 'linear-gradient(45deg, #e2e8f0 25%, transparent 25%), linear-gradient(-45deg, #e2e8f0 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #e2e8f0 75%), linear-gradient(-45deg, transparent 75%, #e2e8f0 75%)', backgroundSize: '20px 20px', backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'}}></div>
+        </div>
+        <div className="mx-auto max-w-6xl px-4 py-20 relative">
+          <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-2">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/50 bg-background/80 backdrop-blur-sm mb-6 text-sm font-medium text-muted-foreground">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+              </svg>
+              Our Story
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+              About LexiCore
+            </h2>
+            <p className="text-muted-foreground max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">
+              Learn more about our <span className="text-foreground font-semibold">mission</span> to make vocabulary learning 
+              <span className="text-foreground font-semibold">enjoyable</span> and <span className="text-foreground font-semibold">effective</span> for everyone
+            </p>
+          </div>
+          <div className="animate-in fade-in slide-in-from-bottom-2 delay-500">
+            <About />
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t bg-gradient-to-br from-slate-900 via-gray-900 to-zinc-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 20%, #ffffff 1px, transparent 1px), radial-gradient(circle at 80% 80%, #ffffff 1px, transparent 1px)', backgroundSize: '100px 100px, 150px 150px'}}></div>
+        </div>
+        <div className="mx-auto max-w-6xl px-4 py-16 relative">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div className="lg:col-span-2">
+              <h3 className="text-2xl font-black bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
+                LexiCore
+              </h3>
+              <p className="text-gray-300 text-lg leading-relaxed mb-6 max-w-md">
+                Making vocabulary learning beautiful, engaging, and effective for students, professionals, and language enthusiasts worldwide.
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <span className="text-gray-400 text-sm">Built with Next.js & AI</span>
+              </div>
+            </div>
+            <div>
+              <h4 className="font-semibold text-white mb-4">Features</h4>
+              <ul className="space-y-3 text-gray-300">
+                <li><a href="#search" className="hover:text-white transition-colors">Word Search</a></li>
+                <li><a href="#features" className="hover:text-white transition-colors">Etymology</a></li>
+                <li><a href="#features" className="hover:text-white transition-colors">Pronunciation</a></li>
+                <li><a href="#features" className="hover:text-white transition-colors">Visual Context</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-white mb-4">Resources</h4>
+              <ul className="space-y-3 text-gray-300">
+                <li><a href="#word-of-day" className="hover:text-white transition-colors">Word of the Day</a></li>
+                <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
+                <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                <li><a href="#search" className="hover:text-white transition-colors">Get Started</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-gray-400 text-sm">
+              © {new Date().getFullYear()} LexiCore. All rights reserved. Making vocabulary learning beautiful.
+            </p>
+            <a 
+              href="#search" 
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-xl font-medium transition-all duration-200 hover:scale-105"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+              </svg>
+              Back to Top
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  )
+}
