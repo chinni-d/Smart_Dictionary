@@ -29,19 +29,19 @@ export default function Page() {
 
   return (
     <main className="min-h-dvh">
-      <div className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur">
+      <div className="fixed top-0 left-0 right-0 z-40 border-b bg-background/80 backdrop-blur">
         <div className="mx-auto max-w-6xl px-4">
           <Navbar />
         </div>
       </div>
 
-      <header className="border-b relative overflow-hidden">
+      <header className="border-b relative overflow-hidden h-screen flex items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 dark:from-slate-950 dark:via-blue-950/30 dark:to-indigo-950/50"></div>
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 25% 25%, #e2e8f0 1px, transparent 1px)', backgroundSize: '60px 60px'}}></div>
         </div>
-        <div className="mx-auto max-w-6xl px-4 py-20 relative">
-          <div className="text-center animate-in fade-in slide-in-from-bottom-2 duration-1000">
+        <div className="max-w-6xl px-4 relative w-full flex flex-col items-center justify-center text-center">
+          <div className="animate-in fade-in slide-in-from-bottom-2 duration-1000">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/50 bg-background/80 backdrop-blur-sm mb-8 text-sm font-medium text-muted-foreground">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
               AI-Powered Dictionary Experience
@@ -61,7 +61,7 @@ export default function Page() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
               <a
                 href="#search"
-                className="group inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-2xl font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
+                className="group inline-flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground rounded-2xl font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
               >
                 Start Exploring
                 <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,20 +70,12 @@ export default function Page() {
               </a>
               <a
                 href="#features"
-                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-border hover:border-primary/50 rounded-2xl font-medium text-lg transition-all duration-200 hover:bg-muted/50"
+                className="inline-flex items-center gap-2 px-4 py-2 border-2 border-border hover:border-primary/50 rounded-2xl font-medium text-lg transition-all duration-200 hover:bg-muted/50"
               >
                 See Features
               </a>
             </div>
             <div className="flex items-center justify-center gap-8 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30 flex items-center justify-center">
-                  <svg className="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <span>Etymology & Origins</span>
-              </div>
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-900/30 dark:to-cyan-900/30 flex items-center justify-center">
                   <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
