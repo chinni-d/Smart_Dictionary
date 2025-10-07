@@ -216,23 +216,23 @@ export default function Page() {
       {/* Footer */}
       <footer className="border-t bg-muted/30 backdrop-blur-sm">
         <div className="mx-auto max-w-6xl px-4 py-12">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 mb-8">
             {/* Brand Section */}
-            <div>
-              <div className="flex items-center gap-3 mb-4">
+            <div className="col-span-2 lg:col-span-1 text-center sm:text-left">
+              <div className="flex items-center justify-center sm:justify-start gap-3 mb-4">
                 <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 flex items-center justify-center">
                   <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
                 </div>
-                <span className="font-black text-lg bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                <span className="font-black text-sm sm:text-lg bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
                   LexiCore
                 </span>
               </div>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+              <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed mb-4 max-w-xs mx-auto sm:mx-0">
                 Making vocabulary learning beautiful and effective with AI-powered insights.
               </p>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center sm:justify-start gap-2 sm:gap-3">
                 <a href="https://www.dmanikanta.site" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="Portfolio">
                   <Globe className="w-5 h-5 text-blue-600" />
                 </a>
@@ -246,7 +246,7 @@ export default function Page() {
             </div>
 
             {/* Quick Links */}
-            <div>
+            <div className="text-center sm:text-left">
               <h4 className="font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm">
                 <li><a href="#search" className="text-muted-foreground hover:text-foreground transition-colors">Search Words</a></li>
@@ -257,7 +257,7 @@ export default function Page() {
             </div>
 
             {/* Resources */}
-            <div>
+            <div className="text-center sm:text-left">
               <h4 className="font-semibold mb-4">Resources</h4>
               <ul className="space-y-2 text-sm">
                 <li><a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Pronunciation</a></li>
@@ -267,9 +267,9 @@ export default function Page() {
             </div>
 
             {/* Connect */}
-            <div>
+            <div className="text-center sm:text-left">
               <h4 className="font-semibold mb-4">Connect</h4>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center justify-center sm:justify-start gap-4">
                 <a href="https://www.dmanikanta.site" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="Portfolio">
                   <Globe className="w-6 h-6 text-blue-600" />
                 </a>
@@ -284,11 +284,11 @@ export default function Page() {
           </div>
 
           {/* Bottom Section */}
-          <div className="border-t pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="border-t pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
             <p className="text-muted-foreground text-sm">
               © {new Date().getFullYear()} LexiCore. All rights reserved.
             </p>
-            <div className="flex items-center gap-4 text-sm text-muted-foreground">
+            <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground">
               <span>Built with 💛 using Next.js and AI technologies.</span>
             </div>
           </div>
