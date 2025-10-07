@@ -4,44 +4,88 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, BookOpen, Search, Calendar, Zap, Info, Shield } from "lucide-react"
+import { Menu, BookOpen, Search, Calendar, Zap, Info } from "lucide-react"
 
 const links = [
   { href: "#search", label: "Search", icon: Search },
   { href: "#word-of-day", label: "Word of Day", icon: Calendar },
   { href: "#features", label: "Features", icon: Zap },
   { href: "#about", label: "About", icon: Info },
-  { href: "/privacy", label: "Privacy", icon: Shield },
 ]
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
-  const [hash, setHash] = useState<string>("")
+  const [activeSection, setActiveSection] = useState<string>("")
 
   useEffect(() => {
-    const update = () => setHash(window.location.hash || "")
-    update()
-    window.addEventListener("hashchange", update)
-    return () => window.removeEventListener("hashchange", update)
+    const sections = links.map(link => link.href.replace('#', '')).filter(id => id)
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Find the section that is most visible
+        let maxRatio = 0
+        let activeId = ""
+        
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
+            maxRatio = entry.intersectionRatio
+            activeId = entry.target.id
+          }
+        })
+        
+        if (activeId) {
+          setActiveSection(`#${activeId}`)
+        }
+      },
+      {
+        rootMargin: "-20% 0px -60% 0px", // Trigger when section is 20% from top
+        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+      }
+    )
+
+    // Observe all sections
+    sections.forEach((sectionId) => {
+      const element = document.getElementById(sectionId)
+      if (element) {
+        observer.observe(element)
+      }
+    })
+
+    // Also listen to hash changes for direct navigation
+    const handleHashChange = () => {
+      const hash = window.location.hash
+      if (hash) {
+        setActiveSection(hash)
+      }
+    }
+    
+    // Set initial active section
+    handleHashChange()
+    window.addEventListener("hashchange", handleHashChange)
+
+    return () => {
+      observer.disconnect()
+      window.removeEventListener("hashchange", handleHashChange)
+    }
   }, [])
 
   return (
-    <nav aria-label="Primary" className="flex h-20 items-center justify-between relative">
+    <nav aria-label="Primary" className="flex h-16 items-center justify-between relative">
       {/* Logo Section */}
       <Link href="/" className="flex items-center gap-3 shrink-0 group" aria-label="Home">
         <div className="relative">
-          <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-            <BookOpen className="w-5 h-5 text-white" />
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+            <BookOpen className="w-4 h-4 text-white" />
           </div>
-          <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
-            <span className="text-[8px] font-bold text-white">W</span>
+          <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
+            <span className="text-[7px] font-bold text-white">W</span>
           </div>
         </div>
         <div className="flex flex-col">
-          <span className="font-black text-xl bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+          <span className="font-black text-lg bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
             LexiCore
           </span>
-          <span className="text-[10px] text-muted-foreground font-medium tracking-wider uppercase">
+          <span className="text-[9px] text-muted-foreground font-medium tracking-wider uppercase">
             Smart Dictionary
           </span>
         </div>
@@ -50,14 +94,14 @@ export function Navbar() {
       {/* Desktop Navigation */}
       <div className="hidden lg:flex items-center gap-2">
         {links.map((l) => {
-          const isActive = l.href.startsWith("#") ? hash === l.href : false
+          const isActive = l.href.startsWith("#") ? activeSection === l.href : false
           const Icon = l.icon
           return (
             <a
               key={l.href}
               href={l.href}
               aria-current={isActive ? "page" : undefined}
-              className={`group relative px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 ${
+              className={`group relative px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
                 isActive 
                   ? 'bg-gradient-to-r from-blue-500/10 to-purple-500/10 text-blue-600 dark:text-blue-400 shadow-sm' 
                   : 'hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 dark:hover:from-blue-950/30 dark:hover:to-purple-950/30 text-muted-foreground hover:text-foreground'
@@ -79,11 +123,11 @@ export function Navbar() {
           <div className="w-px h-6 bg-border"></div>
           <a
             href="#search"
-            className="group relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 text-white rounded-2xl font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            className="group relative inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 text-white rounded-xl font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
             <Search className="w-4 h-4" />
             <span>Try Now</span>
-            <div className="absolute inset-0 rounded-2xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 rounded-xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </a>
         </div>
       </div>
@@ -96,9 +140,9 @@ export function Navbar() {
               variant="outline" 
               size="icon" 
               aria-label="Open navigation"
-              className="w-12 h-12 rounded-2xl border-2 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 dark:hover:from-blue-950/30 dark:hover:to-purple-950/30 transition-all duration-200"
+              className="w-10 h-10 rounded-xl border-2 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 dark:hover:from-blue-950/30 dark:hover:to-purple-950/30 transition-all duration-200"
             >
-              <Menu className="w-5 h-5" />
+              <Menu className="w-4 h-4" />
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="w-[60%] bg-background/95 backdrop-blur-xl border-l border-border/50">
@@ -121,7 +165,7 @@ export function Navbar() {
             <div className="flex flex-col gap-2 mt-4">
               {links.map((l) => {
                 const Icon = l.icon
-                const isActive = l.href.startsWith("#") ? hash === l.href : false
+                const isActive = l.href.startsWith("#") ? activeSection === l.href : false
                 return (
                   <a
                     key={l.href}

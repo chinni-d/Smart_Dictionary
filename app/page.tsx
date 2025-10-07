@@ -5,6 +5,8 @@ import { Features } from "@/components/features"
 import { About } from "@/components/about"
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
+import { SiLinkedin, SiGithub } from "react-icons/si"
+import { Globe } from "lucide-react"
 
 export default function Page() {
   return (
@@ -193,63 +195,99 @@ export default function Page() {
         </div>
       </section>
 
-      <footer className="border-t bg-gradient-to-br from-slate-900 via-gray-900 to-zinc-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 20%, #ffffff 1px, transparent 1px), radial-gradient(circle at 80% 80%, #ffffff 1px, transparent 1px)', backgroundSize: '100px 100px, 150px 150px'}}></div>
-        </div>
-        <div className="mx-auto max-w-6xl px-4 py-16 relative">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            <div className="lg:col-span-2">
-              <h3 className="text-2xl font-black bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
-                LexiCore
-              </h3>
-              <p className="text-gray-300 text-lg leading-relaxed mb-6 max-w-md">
-                Making vocabulary learning beautiful, engaging, and effective for students, professionals, and language enthusiasts worldwide.
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+      {/* Footer */}
+      <footer className="border-t bg-muted/30 backdrop-blur-sm">
+        <div className="mx-auto max-w-6xl px-4 py-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            {/* Brand Section */}
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
                 </div>
-                <span className="text-gray-400 text-sm">Built with Next.js & AI</span>
+                <span className="font-black text-lg bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                  LexiCore
+                </span>
+              </div>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                Making vocabulary learning beautiful and effective with AI-powered insights.
+              </p>
+              <div className="flex items-center gap-3">
+                <a href="www.dmanikanta.site" className="w-8 h-8 rounded-lg hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="Portfolio">
+                  <Globe className="w-5 h-5 text-blue-600" />
+                </a>
+                <a href="https://www.linkedin.com/in/manikanta-darapureddy-6a1125314/" className="w-8 h-8 rounded-lg hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="LinkedIn">
+                  <SiLinkedin className="w-5 h-5 text-[#0077B5]" />
+                </a>
+                <a href="https://github.com/chinni-d" className="w-8 h-8 rounded-lg hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="GitHub">
+                  <SiGithub className="w-5 h-5 text-[#181717] dark:text-white" />
+                </a>
               </div>
             </div>
+
+            {/* Quick Links */}
             <div>
-              <h4 className="font-semibold text-white mb-4">Features</h4>
-              <ul className="space-y-3 text-gray-300">
-                <li><a href="#search" className="hover:text-white transition-colors">Word Search</a></li>
-                <li><a href="#features" className="hover:text-white transition-colors">Etymology</a></li>
-                <li><a href="#features" className="hover:text-white transition-colors">Pronunciation</a></li>
-                <li><a href="#features" className="hover:text-white transition-colors">Visual Context</a></li>
+              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-sm">
+                <li><a href="#search" className="text-muted-foreground hover:text-foreground transition-colors">Search Words</a></li>
+                <li><a href="#word-of-day" className="text-muted-foreground hover:text-foreground transition-colors">Word of Day</a></li>
+                <li><a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Features</a></li>
+                <li><a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">About</a></li>
               </ul>
             </div>
+
+            {/* Resources */}
             <div>
-              <h4 className="font-semibold text-white mb-4">Resources</h4>
-              <ul className="space-y-3 text-gray-300">
-                <li><a href="#word-of-day" className="hover:text-white transition-colors">Word of the Day</a></li>
-                <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
-                <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-                <li><a href="#search" className="hover:text-white transition-colors">Get Started</a></li>
+              <h4 className="font-semibold mb-4">Resources</h4>
+              <ul className="space-y-2 text-sm">
+                <li><a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Etymology</a></li>
+                <li><a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Pronunciation</a></li>
+                <li><a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Visual Context</a></li>
+                <li><a href="#search" className="text-muted-foreground hover:text-foreground transition-colors">Get Started</a></li>
               </ul>
+            </div>
+
+            {/* Connect */}
+            <div>
+              <h4 className="font-semibold mb-4">Connect</h4>
+              <div className="flex items-center gap-4">
+                <a href="www.dmanikanta.site" className="w-10 h-10 rounded-lg hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="Portfolio">
+                  <Globe className="w-6 h-6 text-blue-600" />
+                </a>
+                <a href="https://www.linkedin.com/in/manikanta-darapureddy-6a1125314/" className="w-10 h-10 rounded-lg hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="LinkedIn">
+                  <SiLinkedin className="w-6 h-6 text-[#0077B5]" />
+                </a>
+                <a href="https://github.com/chinni-d" className="w-10 h-10 rounded-lg hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="GitHub">
+                  <SiGithub className="w-6 h-6 text-[#181717] dark:text-white" />
+                </a>
+              </div>
             </div>
           </div>
-          <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} LexiCore. All rights reserved. Making vocabulary learning beautiful.
+
+          {/* Bottom Section */}
+          <div className="border-t pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-muted-foreground text-sm">
+              © {new Date().getFullYear()} LexiCore. All rights reserved.
             </p>
-            <a 
-              href="#search" 
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-xl font-medium transition-all duration-200 hover:scale-105"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-              </svg>
-              Back to Top
-            </a>
+            <div className="flex items-center gap-4 text-sm text-muted-foreground">
+              <span>Built with 💛 using Next.js and AI technologies.</span>
+            </div>
           </div>
         </div>
       </footer>
+
+      {/* Back to Top Button */}
+      <a 
+        href="#search" 
+        className="fixed bottom-6 right-6 z-50 w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+        aria-label="Back to top"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+      </a>
     </main>
   )
 }
