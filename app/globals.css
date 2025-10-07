@@ -171,3 +171,12 @@
     background: var(--background);
   }
 }
+/* Hide scrollbar (vertical + horizontal) */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
