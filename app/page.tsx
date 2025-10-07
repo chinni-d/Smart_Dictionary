@@ -215,13 +215,13 @@ export default function Page() {
                 Making vocabulary learning beautiful and effective with AI-powered insights.
               </p>
               <div className="flex items-center gap-3">
-                <a href="www.dmanikanta.site" className="w-8 h-8 rounded-lg hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="Portfolio">
+                <a href="https://www.dmanikanta.site" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="Portfolio">
                   <Globe className="w-5 h-5 text-blue-600" />
                 </a>
-                <a href="https://www.linkedin.com/in/manikanta-darapureddy-6a1125314/" className="w-8 h-8 rounded-lg hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/manikanta-darapureddy-6a1125314/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="LinkedIn">
                   <SiLinkedin className="w-5 h-5 text-[#0077B5]" />
                 </a>
-                <a href="https://github.com/chinni-d" className="w-8 h-8 rounded-lg hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="GitHub">
+                <a href="https://github.com/chinni-d" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="GitHub">
                   <SiGithub className="w-5 h-5 text-[#181717] dark:text-white" />
                 </a>
               </div>
@@ -242,7 +242,6 @@ export default function Page() {
             <div>
               <h4 className="font-semibold mb-4">Resources</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Etymology</a></li>
                 <li><a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Pronunciation</a></li>
                 <li><a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Visual Context</a></li>
                 <li><a href="#search" className="text-muted-foreground hover:text-foreground transition-colors">Get Started</a></li>
@@ -253,13 +252,13 @@ export default function Page() {
             <div>
               <h4 className="font-semibold mb-4">Connect</h4>
               <div className="flex items-center gap-4">
-                <a href="www.dmanikanta.site" className="w-10 h-10 rounded-lg hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="Portfolio">
+                <a href="https://www.dmanikanta.site" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="Portfolio">
                   <Globe className="w-6 h-6 text-blue-600" />
                 </a>
-                <a href="https://www.linkedin.com/in/manikanta-darapureddy-6a1125314/" className="w-10 h-10 rounded-lg hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/manikanta-darapureddy-6a1125314/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="LinkedIn">
                   <SiLinkedin className="w-6 h-6 text-[#0077B5]" />
                 </a>
-                <a href="https://github.com/chinni-d" className="w-10 h-10 rounded-lg hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="GitHub">
+                <a href="https://github.com/chinni-d" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="GitHub">
                   <SiGithub className="w-6 h-6 text-[#181717] dark:text-white" />
                 </a>
               </div>
