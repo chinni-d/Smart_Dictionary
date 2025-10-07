@@ -8,7 +8,7 @@ export const words = [
   "mellifluous",
   "halcyon",
   "zenith",
-  "sonder",
+  "perspicacious",
   "luminous",
   "ineffable",
   "ubiquitous",
@@ -18,5 +18,5 @@ export const words = [
   "effervescent",
   "catharsis",
   "epiphany",
-  "sonder",
+  "ethereal",
 ]
