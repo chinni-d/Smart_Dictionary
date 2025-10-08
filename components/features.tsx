@@ -6,21 +6,59 @@ const items = [
     icon: Search,
     title: "Smart Word Search",
     desc: "Instantly find comprehensive definitions, meanings, and usage examples for any word.",
+    color: "text-emerald-600 dark:text-emerald-400",
+    bgColor: "bg-emerald-50 dark:bg-emerald-950/20",
   },
   {
     icon: Volume2,
     title: "Audio Pronunciation",
     desc: "Listen to correct pronunciation variants for perfect learning.",
+    color: "text-orange-600 dark:text-orange-400",
+    bgColor: "bg-orange-50 dark:bg-orange-950/20",
   },
-  { icon: Mic, title: "Voice Search", desc: "Search hands-free using voice recognition for a seamless experience." },
-  { icon: BookOpen, title: "Rich Definitions", desc: "Multiple meanings, parts of speech, and detailed explanations." },
-  { icon: ScrollText, title: "Etymology & Origins", desc: "Discover the history and linguistic roots behind words." },
-  { icon: ImageIcon, title: "Visual Context", desc: "Related visuals to enhance memory and understanding." },
-  { icon: Share2, title: "Easy Sharing", desc: "Copy definitions and examples with one click." },
-  { icon: Calendar, title: "Daily Discovery", desc: "A curated Word of the Day keeps learning fresh." },
+  {
+    icon: Mic,
+    title: "Voice Search",
+    desc: "Search hands-free using voice recognition for a seamless experience.",
+    color: "text-blue-600 dark:text-blue-400",
+    bgColor: "bg-blue-50 dark:bg-blue-950/20",
+  },
+  {
+    icon: BookOpen,
+    title: "Rich Definitions",
+    desc: "Multiple meanings, parts of speech, and detailed explanations.",
+    color: "text-purple-600 dark:text-purple-400",
+    bgColor: "bg-purple-50 dark:bg-purple-950/20",
+  },
+  {
+    icon: ScrollText,
+    title: "Etymology & Origins",
+    desc: "Discover the history and linguistic roots behind words.",
+    color: "text-rose-600 dark:text-rose-400",
+    bgColor: "bg-rose-50 dark:bg-rose-950/20",
+  },
+  {
+    icon: ImageIcon,
+    title: "Visual Context",
+    desc: "Related visuals to enhance memory and understanding.",
+    color: "text-cyan-600 dark:text-cyan-400",
+    bgColor: "bg-cyan-50 dark:bg-cyan-950/20",
+  },
+  {
+    icon: Share2,
+    title: "Easy Sharing",
+    desc: "Copy definitions and examples with one click.",
+    color: "text-green-600 dark:text-green-400",
+    bgColor: "bg-green-50 dark:bg-green-950/20",
+  },
+  {
+    icon: Calendar,
+    title: "Daily Discovery",
+    desc: "A curated Word of the Day keeps learning fresh.",
+    color: "text-violet-600 dark:text-violet-400",
+    bgColor: "bg-violet-50 dark:bg-violet-950/20",
+  },
 ]
-
-const colorCycle = ["accent-1", "accent-2", "primary"] as const
 
 export function Features() {
   return (
@@ -31,46 +69,32 @@ export function Features() {
           Our comprehensive tools make learning new vocabulary engaging, effective, and enjoyable.
         </p>
       </div>
+      
       <div className="grid gap-4 sm:grid-cols-2">
-        {items.map(({ icon: Icon, title, desc }, idx) => {
-          const tone = colorCycle[idx % colorCycle.length]
-          return (
-            <Card
-              key={title}
-              className="p-4 transition hover:shadow-md hover:ring-1 hover:ring-primary/40 animate-in fade-in slide-in-from-bottom-2"
-            >
-              <div className="flex items-start gap-3">
-                <div
-                  className={`rounded-md p-2 ring-1`}
-                  style={{
-                    backgroundColor:
-                      tone === "primary"
-                        ? "var(--color-primary)"
-                        : tone === "accent-1"
-                          ? "var(--color-accent-1)"
-                          : "var(--color-accent-2)",
-                    color:
-                      tone === "primary"
-                        ? "var(--color-primary-foreground)"
-                        : tone === "accent-1"
-                          ? "var(--color-accent-1-foreground)"
-                          : "var(--color-accent-2-foreground)",
-                    borderColor:
-                      tone === "primary"
-                        ? "color-mix(in oklab, var(--color-primary) 40%, var(--color-border))"
-                        : "var(--color-border)",
-                  }}
-                >
-                  <Icon className="size-5" />
-                </div>
-                <div>
-                  <h3 className="font-medium">{title}</h3>
-                  <p className="text-sm text-muted-foreground mt-1">{desc}</p>
-                </div>
+        {items.map(({ icon: Icon, title, desc, color, bgColor }, idx) => (
+          <Card
+            key={title}
+            className="group p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 border-0 shadow-sm"
+            style={{
+              animationDelay: `${idx * 100}ms`,
+            }}
+          >
+            <div className="flex items-start gap-4">
+              <div className={`rounded-lg p-2.5 ${bgColor} transition-transform duration-300 group-hover:scale-105`}>
+                <Icon className={`w-5 h-5 ${color}`} />
               </div>
-            </Card>
-          )
-        })}
+              
+              <div className="flex-1 min-w-0">
+                <h3 className="font-semibold text-base mb-2 text-foreground">
+                  {title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {desc}
+                </p>
+              </div>
+            </div>
+          </Card>
+        ))}
       </div>
     </div>
   )

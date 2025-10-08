@@ -146,7 +146,7 @@ export default function Page() {
               </svg>
               Daily Vocabulary
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
               Word of the Day
             </h2>
             <p className="text-muted-foreground max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">
