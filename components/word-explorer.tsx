@@ -99,9 +99,11 @@ export function WordExplorer() {
     recognition.interimResults = false
     recognition.maxAlternatives = 1
     recognition.onresult = (event: SpeechRecognitionEvent) => {
-      const text = event.results?.[0]?.[0]?.transcript ?? ""
-      setQuery(text)
-      setWord(text)
+      const rawText = event.results?.[0]?.[0]?.transcript ?? ""
+      // Remove trailing punctuation (period, comma, question mark, exclamation mark)
+      const cleanText = rawText.replace(/[.,!?]+$/, "").trim()
+      setQuery(cleanText)
+      setWord(cleanText)
     }
     recognition.start()
   }
