@@ -163,10 +163,10 @@ export function Navbar() {
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
             <Button 
-              variant="outline" 
+              variant="ghost" 
               size="icon" 
               aria-label="Open navigation"
-              className="w-10 h-10 rounded-xl border-2 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 dark:hover:from-blue-950/30 dark:hover:to-purple-950/30 transition-all duration-200"
+              className="w-10 h-10 rounded-xl hover:bg-muted/50 transition-all duration-200"
             >
               <Menu className="w-4 h-4" />
             </Button>

@@ -65,7 +65,7 @@ export default function Page() {
                 <span className="text-foreground font-medium">deep understanding</span>
               </Highlighter>.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+            <div className="flex flex-row items-center justify-center gap-4 mb-12">
               <a
                 href="#search"
                 className="group inline-flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground rounded-2xl font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
