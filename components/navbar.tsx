@@ -7,6 +7,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { Menu, BookOpen, Search, Calendar, Zap, Info } from "lucide-react"
 
 const links = [
+  { href: "#home", label: "Home", icon: BookOpen },
   { href: "#search", label: "Search", icon: Search },
   { href: "#word-of-day", label: "Word of Day", icon: Calendar },
   { href: "#features", label: "Features", icon: Zap },

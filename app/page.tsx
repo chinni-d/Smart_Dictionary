@@ -37,7 +37,7 @@ export default function Page() {
         </div>
       </div>
 
-      <header className="border-b relative overflow-hidden h-screen flex items-center justify-center">
+      <header id="home" className="border-b relative overflow-hidden h-screen flex items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 dark:from-slate-950 dark:via-blue-950/30 dark:to-indigo-950/50"></div>
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 25% 25%, #e2e8f0 1px, transparent 1px)', backgroundSize: '60px 60px'}}></div>
