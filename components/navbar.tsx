@@ -4,7 +4,8 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, BookOpen, Search, Calendar, Zap, Info } from "lucide-react"
+import { Menu, BookOpen, Search, Calendar, Zap, Info, Globe } from "lucide-react"
+import { SiLinkedin, SiGithub } from "react-icons/si"
 
 const links = [
   { href: "#home", label: "Home", icon: BookOpen },
@@ -119,17 +120,41 @@ export function Navbar() {
           )
         })}
         
-        {/* CTA Button */}
+        {/* Social Links */}
         <div className="ml-4 flex items-center gap-3">
-          <div className="w-px h-6 bg-border"></div>
-          <a
-            href="#search"
-            className="group relative inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 text-white rounded-xl font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-          >
-            <Search className="w-4 h-4" />
-            <span>Try Now</span>
-            <div className="absolute inset-0 rounded-xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </a>
+          <div className="w-px h-6 bg-gradient-to-b from-transparent via-border to-transparent"></div>
+          <div className="flex items-center gap-2">
+            <a 
+              href="https://www.dmanikanta.site" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="group w-10 h-10 rounded-xl bg-transparent hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" 
+              aria-label="Portfolio"
+              title="Visit Portfolio"
+            >
+              <Globe className="w-5 h-5 text-blue-600 group-hover:text-blue-700 transition-colors duration-200" />
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/manikanta-darapureddy-6a1125314/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="group w-10 h-10 rounded-xl bg-transparent hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" 
+              aria-label="LinkedIn"
+              title="Connect on LinkedIn"
+            >
+              <SiLinkedin className="w-5 h-5 text-[#0077B5] group-hover:text-[#005885] transition-colors duration-200" />
+            </a>
+            <a 
+              href="https://github.com/chinni-d" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="group w-10 h-10 rounded-xl bg-transparent hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" 
+              aria-label="GitHub"
+              title="View GitHub Profile"
+            >
+              <SiGithub className="w-5 h-5 text-gray-700 group-hover:text-gray-900 transition-colors duration-200" />
+            </a>
+          </div>
         </div>
       </div>
 
@@ -193,21 +218,50 @@ export function Navbar() {
                 )
               })}
               
-              <div className="mt-6 pt-4 border-t border-border/50">
+              <div className="mt-6 pt-4 border-t border-gradient-to-r from-transparent via-border to-transparent">
+                <div className="text-center mb-4">
+                  <h4 className="text-sm font-semibold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent mb-2">
+                    Connect With Me
+                  </h4>
+                </div>
                 <div className="flex justify-center">
-                  <a
-                    href="#search"
-                    onClick={() => setOpen(false)}
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 text-white rounded-xl font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
-                  >
-                    <Search className="w-4 h-4" />
-                    Try Now
-                  </a>
+                  <div className="flex items-center gap-4">
+                    <a 
+                      href="https://www.dmanikanta.site" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      onClick={() => setOpen(false)}
+                      className="group w-14 h-14 rounded-2xl bg-transparent hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" 
+                      aria-label="Portfolio"
+                    >
+                      <Globe className="w-6 h-6 text-blue-600 group-hover:text-blue-700 transition-colors duration-200" />
+                    </a>
+                    <a 
+                      href="https://www.linkedin.com/in/manikanta-darapureddy-6a1125314/" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      onClick={() => setOpen(false)}
+                      className="group w-14 h-14 rounded-2xl bg-transparent hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" 
+                      aria-label="LinkedIn"
+                    >
+                      <SiLinkedin className="w-6 h-6 text-[#0077B5] group-hover:text-[#005885] transition-colors duration-200" />
+                    </a>
+                    <a 
+                      href="https://github.com/chinni-d" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      onClick={() => setOpen(false)}
+                      className="group w-14 h-14 rounded-2xl bg-transparent hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" 
+                      aria-label="GitHub"
+                    >
+                      <SiGithub className="w-6 h-6 text-gray-700 group-hover:text-gray-900 transition-colors duration-200" />
+                    </a>
+                  </div>
                 </div>
                 
                 <div className="mt-4 text-center">
                   <p className="text-xs text-muted-foreground">
-                    Discover words with AI-powered insights
+                    Let's connect and build amazing things together
                   </p>
                 </div>
               </div>
