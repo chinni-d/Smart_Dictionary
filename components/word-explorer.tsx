@@ -115,7 +115,7 @@ export function WordExplorer() {
   return (
     <div className="flex flex-col gap-8">
       <div className="relative">
-        <form onSubmit={onSubmit} className="flex items-center gap-3 animate-in fade-in slide-in-from-bottom-2 duration-700">
+        <form onSubmit={onSubmit} className="flex cursor-pointer items-center gap-3 animate-in fade-in slide-in-from-bottom-2 duration-700">
           <label htmlFor="word" className="sr-only">
             Search word
           </label>
@@ -133,7 +133,7 @@ export function WordExplorer() {
           <Button 
             type="submit" 
             size="lg"
-            className="h-14 px-6 rounded-2xl bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-200 shadow-lg hover:shadow-xl"
+            className="h-14 px-6 cursor-pointer rounded-2xl bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-200 shadow-lg hover:shadow-xl"
           >
             <SearchIcon className="size-5 mr-2" />
             Search
@@ -144,7 +144,7 @@ export function WordExplorer() {
             size="lg"
             onClick={startVoice} 
             aria-label="Voice search" 
-            className="h-14 px-4 rounded-2xl border-2 hover:bg-secondary/20 transition-all duration-200"
+            className="h-14 px-4 cursor-pointer rounded-2xl border-2 hover:bg-secondary/20 transition-all duration-200"
           >
             <Mic className="size-5" />
           </Button>

@@ -231,7 +231,7 @@ export default function Page() {
               <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed mb-4 max-w-xs mx-auto sm:mx-0">
                 Making vocabulary learning beautiful and effective with AI-powered insights.
               </p>
-              <div className="flex items-center justify-center sm:justify-start gap-2 sm:gap-3">
+              <div className="hidden sm:flex items-center justify-center sm:justify-start gap-2 sm:gap-3">
                 <a href="https://www.dmanikanta.site" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="Portfolio">
                   <Globe className="w-5 h-5 text-blue-600" />
                 </a>
@@ -266,7 +266,7 @@ export default function Page() {
             </div>
 
             {/* Connect */}
-            <div className="text-center sm:text-left">
+            <div className="col-span-2 lg:col-span-1 text-center sm:text-left">
               <h4 className="font-semibold mb-4">Connect</h4>
               <div className="flex items-center justify-center sm:justify-start gap-4">
                 <a href="https://www.dmanikanta.site" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg hover:bg-muted/50 flex items-center justify-center transition-all duration-200 hover:scale-110" aria-label="Portfolio">
@@ -287,7 +287,10 @@ export default function Page() {
             <p className="text-muted-foreground text-sm">
               © {new Date().getFullYear()} LexiCore. All rights reserved.
             </p>
-            <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground">
+            <div className="text-muted-foreground text-sm">
+              <span>Developed by Manikanta🖤</span>
+            </div>
+            <div className="text-muted-foreground text-sm">
               <span>Built with 💛 using Next.js and AI technologies.</span>
             </div>
           </div>
