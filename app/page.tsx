@@ -9,6 +9,8 @@ import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { SiLinkedin, SiGithub } from "react-icons/si"
 import { Globe } from "lucide-react"
+import { SparklesText } from "@/components/sparkes-text"
+import { Highlighter } from "@/components/highlighter"
 
 export default function Page() {
   const [showBackToTop, setShowBackToTop] = useState(false)
@@ -47,16 +49,21 @@ export default function Page() {
               AI-Powered Dictionary Experience
             </div>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-foreground mb-6 leading-none tracking-tight">
-              Your Calm Study
+             <SparklesText sparklesCount={25} as={<span />} className="inline-block">Your Calm Study</SparklesText>
               <br />
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
                 Dictionary
               </span>
             </h1>
             <p className="text-muted-foreground max-w-3xl mx-auto text-xl md:text-2xl leading-relaxed mb-8 font-light">
-              Discover words in a peaceful, distraction-free environment designed for 
-              <span className="text-foreground font-medium"> focused learning</span> and 
-              <span className="text-foreground font-medium"> deep understanding</span>.
+              Discover words in a peaceful, distraction-free environment designed for{" "}
+              <Highlighter action="highlight" color="#87CEFA" animationDuration={800} isView={true}>
+                <span className="text-foreground font-medium">focused learning</span>
+              </Highlighter>{" "}
+              and{" "}
+              <Highlighter action="underline" color="#FF9800" animationDuration={1000} isView={true}>
+                <span className="text-foreground font-medium">deep understanding</span>
+              </Highlighter>.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
               <a
