@@ -35,13 +35,7 @@ const aboutItems = [
 export function About() {
   return (
     <div className="flex flex-col gap-6">
-      <div>
-        <h2 className="text-2xl font-semibold text-balance">About LexiCore</h2>
-        <p className="text-muted-foreground mt-2 max-w-2xl">
-          We believe learning new words should be calm and focused—supporting deep understanding without distractions.
-          From the gentle palette to smooth interactions, everything is crafted to help your curiosity thrive.
-        </p>
-      </div>
+      
       
       <div className="grid gap-4 sm:grid-cols-2">
         {aboutItems.map(({ icon: Icon, title, desc, color, bgColor }, idx) => (

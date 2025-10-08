@@ -63,12 +63,7 @@ const items = [
 export function Features() {
   return (
     <div className="flex flex-col gap-6">
-      <div>
-        <h2 className="text-2xl font-semibold text-balance">Everything You Need to Master Words</h2>
-        <p className="text-muted-foreground mt-2 max-w-2xl">
-          Our comprehensive tools make learning new vocabulary engaging, effective, and enjoyable.
-        </p>
-      </div>
+    
       
       <div className="grid gap-4 sm:grid-cols-2">
         {items.map(({ icon: Icon, title, desc, color, bgColor }, idx) => (
