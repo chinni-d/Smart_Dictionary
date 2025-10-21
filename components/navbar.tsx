@@ -74,7 +74,7 @@ export function Navbar() {
   return (
     <nav aria-label="Primary" className="flex h-16 items-center relative">
       {/* Logo Section */}
-      <Link href="/" className="flex items-center gap-3 shrink-0 group mr-28 -ml-16" aria-label="Home">
+      <Link href="/" className="flex items-center gap-3 shrink-0 group mr-4 lg:mr-28 lg:-ml-16" aria-label="Home">
         <div className="relative">
           <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
             <BookOpen className="w-4 h-4 text-white" />
